@@ -1,0 +1,19 @@
+[package]
+name = "giants-beacon"
+version = "0.1.0"
+edition = "2021"
+description = "Small command-line controller for the GIANTS Software USB beacon"
+license = "MIT"
+
+[[bin]]
+name = "beacon"
+path = "src/main.rs"
+
+[dependencies]
+hidapi = { version = "2.6.7", default-features = false, features = ["linux-native-basic-udev", "windows-native"] }
+ctrlc = { version = "3.5", features = ["termination"] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true

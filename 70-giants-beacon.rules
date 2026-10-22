@@ -1,0 +1,2 @@
+# Allow the active local desktop user to control this beacon.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="340d", ATTRS{idProduct}=="1710", TAG+="uaccess"
